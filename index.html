@@ -83,7 +83,7 @@
                 <input type="text" id="name" name="name" placeholder="Ваше имя" required>
                 
                 <label for="phone">Номер телефона:</label>
-                <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX"  required>
                 
                 <button type="submit">Отправить</button>
             </form>
@@ -91,23 +91,7 @@
             <p id="formMessage" style="color: red; display: none;">Пожалуйста, заполните все поля правильно.</p>
         </section>
         
-        <script>
-            function validateForm() {
-                const name = document.getElementById('name').value;
-                const phone = document.getElementById('phone').value;
-                const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-                const message = document.getElementById('formMessage');
         
-                if (!name || !phonePattern.test(phone)) {
-                    message.style.display = 'block';
-                    return false;
-                }
-        
-                message.style.display = 'none';
-                alert('Форма успешно отправлена!');
-                return true; // Здесь можно добавить отправку данных на сервер
-            }
-        </script>
         
     </main>
 
