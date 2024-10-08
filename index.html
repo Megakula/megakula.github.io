@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsychoBase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PsychoBase</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="mobileMenu">
+            <a href="index.html">Главная</a>
+            <a href="#section1">О нас</a>
+            <a href="#section2">Курсы</a>
+            <a href="#section3">Эксперты</a>
+            <a href="#section4">Записаться к нам</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section1" class="hero">
+            <div>
+                <h1>О нас</h1>
+                <p>PsychoBase - это объединенная группа психологов, что старается обозревать базовые и фундаментальные проблемы в области человеческой психологии, а также осуществляющая индивидуальные и групповые консультации</p>
+            </div>
+        </section>
+
+        <section id="section2" class="courses">
+            <h2 class="section-title">Курсы</h2>
+            <div class="course-grid">
+                <a href="curs1.html"><div class="course-card course-card1" > <p>Манипуляции и Провокации, как вычислять и что делать</p></div></a>
+                <a href="curs4.html"><div class="course-card course-card2"><p>Как развивать уверенность в себе и повысить самооценку</p></div></a>
+                <a href="curs2.html"><div class="course-card course-card3"><p>Как говорить НЕТ и отстаивать свои границы</p></div></a>
+                <a href="curs3.html"><div class="course-card course-card4"><p>Как управлять своими эмоциями в стрессовых ситуациях</p></div></a>
+            </div>
+        </section>
+
+        <section id="section3" class="features-section">
+            <h2 class="section-title">Почему мы?</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>Опытные специалисты</h3>
+                    <p>Наши эксперты имеют многолетний опыт работы в различных областях психологии</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Практический подход</h3>
+                    <p>Все курсы включают практические занятия и работу с реальными кейсами</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Гибкий график</h3>
+                    <p>Выбирайте удобное время для сеанс</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="experts-section">
+            <h2 class="section-title">Наши эксперты</h2>
+            <div class="experts-grid">
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="ekaterina.jpeg" alt="">
+                    </div>
+                    <h3>Екатерина Горохова</h3>
+                    <p>Генеральный директор</p>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="image.webp" alt="">
+                    </div>
+                    <h3>Олег Яйцев</h3>
+                    <p>Психолог</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section4" class="contact-section">
+            <h2 class="section-title1">Записаться на индивидуальную консультацию</h2>
+            
+            <form action="https://formspree.io/f/mkgnwpyj" method="POST" id="contactForm" class="contact-form" onsubmit="return validateForm()">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
+                
+                <button type="submit">Отправить</button>
+            </form>
+        
+            <p id="formMessage" style="color: red; display: none;">Пожалуйста, заполните все поля правильно.</p>
+        </section>
+        
+        <script>
+            function validateForm() {
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+                const message = document.getElementById('formMessage');
+        
+                if (!name || !phonePattern.test(phone)) {
+                    message.style.display = 'block';
+                    return false;
+                }
+        
+                message.style.display = 'none';
+                alert('Форма успешно отправлена!');
+                return true; // Здесь можно добавить отправку данных на сервер
+            }
+        </script>
+        
+    </main>
+
+    <footer>
+        Все права защищены. © PsychoBase 2024
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
