@@ -227,6 +227,10 @@ section:nth-child(even) {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.expert-card p{
+    padding-top: 4%;
+}
+
 .expert-image {
     width: 100px;
     height: 100px;
